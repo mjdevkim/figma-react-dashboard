@@ -1,0 +1,70 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Wise Dashboard — design-token layer
+   All --dash-* variables are the source of truth for the dashboard UI.
+   The `light-theme` class is toggled on the root element by ThemeContext.
+   Full documentation: /design-system.json
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Dark theme (default) ─────────────────────────────────────────────── */
+  --dash-bg:         #0a0a0a;  /* Root / deepest layer                        */
+  --dash-surface:    #121212;  /* Cards, panels, table headers                */
+  --dash-border:     #1d1d20;  /* All dividers, outlines, input borders       */
+  --dash-text:       #ffffff;  /* Primary text, active icon strokes           */
+  --dash-muted:      #bababa;  /* Secondary text, placeholder, muted icons    */
+  --dash-map-fill:   #cccccc;  /* SVG world-map country fill                  */
+  --dash-map-border: #1d1d20;  /* SVG world-map country stroke                */
+}
+
+.light-theme {
+  /* ── Light theme overrides ────────────────────────────────────────────── */
+  --dash-bg:         #f0f2f5;
+  --dash-surface:    #ffffff;
+  --dash-border:     #e2e2e8;
+  --dash-text:       #111111;
+  --dash-muted:      #6b6b80;
+  --dash-map-fill:   #c8ccd4;
+  --dash-map-border: #b0b4bc;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Scrollbar styling — thin, theme-aware, non-obtrusive
+   ───────────────────────────────────────────────────────────────────────────── */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dash-border) transparent;
+}
+
+*::-webkit-scrollbar         { width: 4px; height: 4px; }
+*::-webkit-scrollbar-track   { background: transparent; }
+*::-webkit-scrollbar-thumb   { background-color: var(--dash-border); border-radius: 99px; }
+*::-webkit-scrollbar-thumb:hover { background-color: var(--dash-muted); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   React-Day-Picker — theme-aware overrides
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.rdp {
+  --rdp-cell-size:         32px;
+  --rdp-caption-font-size: 12px;
+  --rdp-accent-color:      #0f62fe;
+  --rdp-background-color:  var(--dash-surface);
+  --rdp-outline:           2px solid var(--rdp-accent-color);
+  --rdp-outline-selected:  2px solid var(--rdp-accent-color);
+  margin: 0;
+  color: var(--dash-text);
+}
+
+.rdp-day:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: var(--dash-border) !important;
+}
+
+.rdp-caption_label { color: var(--dash-text);  }
+.rdp-head_cell     { color: var(--dash-muted); }
+.rdp-nav_button    { color: var(--dash-muted); }
+.rdp-day_outside   { color: var(--dash-muted); opacity: 0.4; }

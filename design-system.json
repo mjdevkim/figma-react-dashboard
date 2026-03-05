@@ -1,0 +1,303 @@
+{
+  "$schema": "https://design-tokens.org/schema/draft",
+  "meta": {
+    "name": "Wise Dashboard Design System",
+    "version": "1.0.0",
+    "description": "Design tokens, typography, spacing, animation, and component patterns for the Wise financial analytics dashboard.",
+    "maintainer": "Wise Design Team",
+    "figmaFile": "MacBookPro141 (imported via Figma Make)",
+    "cssTokenFile": "src/styles/index.css",
+    "themeContextFile": "src/app/context/ThemeContext.tsx"
+  },
+
+  "colors": {
+    "brand": {
+      "primary":      { "value": "#0f62fe", "description": "IBM-style cobalt blue — active states, highlights, logo tile, chart bars, selected day-picker dates." },
+      "primaryLight": { "value": "#64b7e2", "description": "Lighter brand accent — shop-channel chart bars, today indicator in date picker." },
+      "primaryGhost": { "value": "#91b7ff", "description": "Chart bar gradient endpoint for the online channel." }
+    },
+    "dark": {
+      "bg":        { "cssVar": "--dash-bg",        "value": "#0a0a0a",  "description": "Root background — the deepest layer of the UI." },
+      "surface":   { "cssVar": "--dash-surface",   "value": "#121212",  "description": "Cards, panels, table headers — one step lighter than bg." },
+      "border":    { "cssVar": "--dash-border",    "value": "#1d1d20",  "description": "All dividers, card outlines, input borders." },
+      "text":      { "cssVar": "--dash-text",      "value": "#ffffff",  "description": "Primary text, headings, active icon strokes." },
+      "muted":     { "cssVar": "--dash-muted",     "value": "#bababa",  "description": "Secondary / supporting text, placeholder text, muted icons." },
+      "mapFill":   { "cssVar": "--dash-map-fill",  "value": "#cccccc",  "description": "Default SVG country fill on the world map." },
+      "mapBorder": { "cssVar": "--dash-map-border","value": "#1d1d20",  "description": "Country border stroke on the world map." }
+    },
+    "light": {
+      "bg":        { "cssVar": "--dash-bg",        "value": "#f0f2f5",  "description": "Root background in light theme." },
+      "surface":   { "cssVar": "--dash-surface",   "value": "#ffffff",  "description": "Cards and panels in light theme." },
+      "border":    { "cssVar": "--dash-border",    "value": "#e2e2e8",  "description": "Dividers and borders in light theme." },
+      "text":      { "cssVar": "--dash-text",      "value": "#111111",  "description": "Primary text in light theme." },
+      "muted":     { "cssVar": "--dash-muted",     "value": "#6b6b80",  "description": "Secondary text in light theme." },
+      "mapFill":   { "cssVar": "--dash-map-fill",  "value": "#c8ccd4",  "description": "Country fill in light theme." },
+      "mapBorder": { "cssVar": "--dash-map-border","value": "#b0b4bc",  "description": "Country border in light theme." }
+    },
+    "semantic": {
+      "danger":    { "value": "#ef4444", "description": "Destructive actions, notification badge dot." },
+      "checkboxActive": { "value": "#9747ff", "description": "Checked state of table row checkboxes." },
+      "checkboxBorder": { "value": "#aa68ff", "description": "Border of checked table row checkboxes." }
+    }
+  },
+
+  "typography": {
+    "fontFamilies": {
+      "inter":     { "value": "'Inter', sans-serif",     "usage": "All UI text — headings, labels, navigation, table cells." },
+      "openSans":  { "value": "'Open Sans', sans-serif", "usage": "Data-heavy elements — stat card values, chart axis labels, legend text." }
+    },
+    "fontSizes": {
+      "xs":   { "value": "8px",  "usage": "Badge counts, keyboard shortcut labels." },
+      "xxs":  { "value": "10px", "usage": "Asset card descriptions, secondary labels." },
+      "sm":   { "value": "12px", "usage": "Table cells, filter-bar controls, axis labels, legend." },
+      "base": { "value": "14px", "usage": "Sidebar nav items, search placeholder." },
+      "md":   { "value": "16px", "usage": "Widget/card titles." },
+      "lg":   { "value": "18px", "usage": "Stat card title, header title." },
+      "xl":   { "value": "22px", "usage": "WISE wordmark." },
+      "xxl":  { "value": "24px", "usage": "Stat card values." }
+    },
+    "fontWeights": {
+      "normal":    { "value": 400 },
+      "medium":    { "value": 500 },
+      "semibold":  { "value": 600 },
+      "bold":      { "value": 700 },
+      "extrabold": { "value": 800, "usage": "WISE wordmark only." }
+    },
+    "lineHeights": {
+      "tight":  { "value": "12px" },
+      "snug":   { "value": "18px" },
+      "normal": { "value": "22px" },
+      "relaxed":{ "value": "24px" },
+      "loose":  { "value": "28px" }
+    }
+  },
+
+  "spacing": {
+    "description": "All values are in px; used as Tailwind arbitrary values (e.g. p-[8px]).",
+    "scale": {
+      "2":  "2px",
+      "4":  "4px",
+      "6":  "6px",
+      "8":  "8px",
+      "9":  "9px",
+      "10": "10px",
+      "12": "12px",
+      "14": "14px",
+      "16": "16px",
+      "17": "17px",
+      "18": "18px",
+      "20": "20px",
+      "23": "23px",
+      "24": "24px",
+      "40": "40px"
+    },
+    "layout": {
+      "sidebarWidth":       "286px",
+      "headerHeight":       "64px",
+      "filterBarPaddingY":  "14px",
+      "contentPaddingX":    "24px",
+      "contentGap":         "20px",
+      "cardPaddingX":       "20px",
+      "cardPaddingY":       "18px",
+      "tableCellHeight":    "42px",
+      "tableCellPadding":   "8px"
+    }
+  },
+
+  "radii": {
+    "xs":   "4px",
+    "sm":   "6px",
+    "md":   "8px",
+    "pill": "40px",
+    "full": "50px",
+    "logo": "6px",
+    "avatar": "20px"
+  },
+
+  "borders": {
+    "default": {
+      "width": "1px",
+      "style": "solid",
+      "color": "var(--dash-border)"
+    },
+    "dashed": {
+      "width": "1px",
+      "style": "dashed",
+      "color": "var(--dash-border)",
+      "usage": "Chart horizontal grid lines."
+    }
+  },
+
+  "shadows": {
+    "popover": "0 4px 24px rgba(0, 0, 0, 0.4)",
+    "card":    "none"
+  },
+
+  "iconSizes": {
+    "sm": "16px",
+    "md": "20px",
+    "lg": "24px"
+  },
+
+  "logo": {
+    "size":       "28px",
+    "tileRadius": "6px",
+    "tileColor":  "#0f62fe",
+    "markColor":  "#ffffff",
+    "strokeWidth": 2.4,
+    "file": "src/app/components/dashboard/WiseLogo.tsx"
+  },
+
+  "animation": {
+    "description": "All animations use the Motion library (motion/react).",
+    "durations": {
+      "fast":   "0.15s",
+      "normal": "0.3s",
+      "slow":   "0.45s",
+      "bar":    "0.55s"
+    },
+    "easings": {
+      "default": "easeOut"
+    },
+    "variants": {
+      "fadeInUp": {
+        "hidden":  { "opacity": 0, "y": 18 },
+        "visible": { "opacity": 1, "y": 0  }
+      },
+      "slideInLeft": {
+        "hidden":  { "opacity": 0, "x": -12 },
+        "visible": { "opacity": 1, "x": 0   }
+      },
+      "staggerContainer": {
+        "visible": { "transition": { "staggerChildren": 0.09, "delayChildren": 0.15 } }
+      },
+      "sidebarStagger": {
+        "visible": { "transition": { "staggerChildren": 0.05, "delayChildren": 0.05 } }
+      },
+      "navHover": { "x": 2 }
+    }
+  },
+
+  "theme": {
+    "default": "dark",
+    "modes": ["dark", "light"],
+    "toggleMechanism": "CSS class `.light-theme` toggled on the root element via ThemeContext.",
+    "contextFile": "src/app/context/ThemeContext.tsx",
+    "hookUsage": "import { useTheme } from './context/ThemeContext'; const { isDark, toggleTheme } = useTheme();"
+  },
+
+  "hooks": {
+    "useResizeObserver": {
+      "file": "src/app/hooks/useResizeObserver.ts",
+      "description": "Observes an element's content-box size via ResizeObserver and returns reactive width/height.",
+      "usage": "const { ref, size } = useResizeObserver<HTMLDivElement>();"
+    }
+  },
+
+  "constants": {
+    "file": "src/app/constants/dashboard.ts",
+    "exports": [
+      "BRAND_BLUE",
+      "BRAND_BLUE_LIGHT",
+      "PERIODS",
+      "DEFAULT_DATE_RANGE",
+      "MAX_CHART_VALUE",
+      "Y_LABELS",
+      "CHART_DATA",
+      "CHART_LEGEND",
+      "INTEGRATIONS",
+      "INTEGRATION_COLUMNS",
+      "ASSETS"
+    ]
+  },
+
+  "types": {
+    "file": "src/app/types/index.ts",
+    "exports": [
+      "Theme",
+      "Period",
+      "FilterState",
+      "DateRange",
+      "StatCardData",
+      "Integration",
+      "Asset",
+      "BarData"
+    ]
+  },
+
+  "components": {
+    "barrel": "src/app/components/dashboard/index.ts",
+    "items": [
+      {
+        "name": "WiseLogo",
+        "file": "src/app/components/dashboard/WiseLogo.tsx",
+        "props": ["size?: number", "color?: string"]
+      },
+      {
+        "name": "Sidebar",
+        "file": "src/app/components/dashboard/Sidebar.tsx",
+        "notes": "Manages its own active-nav state internally. Extend with an `onNavChange` prop when routing is added."
+      },
+      {
+        "name": "DashboardHeader",
+        "file": "src/app/components/dashboard/DashboardHeader.tsx",
+        "notes": "Theme toggle lives here."
+      },
+      {
+        "name": "DashboardFilterBar",
+        "file": "src/app/components/dashboard/DashboardHeader.tsx",
+        "props": [
+          "onFilterChange?: (state: FilterState) => void",
+          "onDownload?: (state: FilterState) => void"
+        ],
+        "backendHook": "Wire `onFilterChange` to your query-refetch function."
+      },
+      {
+        "name": "StatCard",
+        "file": "src/app/components/dashboard/StatCard.tsx",
+        "props": ["icon: ReactNode", "title: string", "value: string", "ariaLabel?: string"]
+      },
+      {
+        "name": "GrowthRevenueChart",
+        "file": "src/app/components/dashboard/GrowthRevenueChart.tsx",
+        "notes": "Uses `useResizeObserver` for responsive bar heights."
+      },
+      {
+        "name": "CustomerLocation",
+        "file": "src/app/components/dashboard/CustomerLocation.tsx",
+        "notes": "SVG world map with equirectangular projection. South Korea highlighted in brand blue."
+      },
+      {
+        "name": "ThirdPartyIntegration",
+        "file": "src/app/components/dashboard/ThirdPartyIntegration.tsx",
+        "props": ["onSelectionChange?: (ids: string[]) => void"],
+        "backendHook": "Wire `onSelectionChange` to bulk-action endpoints."
+      },
+      {
+        "name": "SecuredAssets",
+        "file": "src/app/components/dashboard/SecuredAssets.tsx"
+      }
+    ]
+  },
+
+  "backendReadiness": {
+    "filterBar": {
+      "prop": "onFilterChange?: (state: FilterState) => void",
+      "example": "<DashboardFilterBar onFilterChange={({ dateRange, period }) => refetch({ dateRange, period })} />"
+    },
+    "download": {
+      "prop": "onDownload?: (state: FilterState) => void",
+      "example": "<DashboardFilterBar onDownload={(state) => exportReport(state)} />"
+    },
+    "tableSelection": {
+      "prop": "onSelectionChange?: (ids: string[]) => void",
+      "example": "<ThirdPartyIntegration onSelectionChange={(ids) => bulkDelete(ids)} />"
+    },
+    "statCards": {
+      "pattern": "Replace the STAT_CARDS array in App.tsx with data from your API (React Query / SWR)."
+    },
+    "chartData": {
+      "pattern": "Replace CHART_DATA in src/app/constants/dashboard.ts with an API-driven source, or pass it as a prop to GrowthRevenueChart."
+    }
+  }
+}
